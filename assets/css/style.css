@@ -1,0 +1,21 @@
+body {
+  padding-top: 6rem;
+}
+
+.round{
+	border-radius: 24px;
+}
+
+.btnList{
+	margin: 5px 5px 5px 0px;
+}
+
+.thumbnail{
+	float: left;
+	margin-right: 5px;
+}
+
+form{
+	text-align: right;
+	padding-top: 3.5px;
+}
