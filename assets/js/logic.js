@@ -2,7 +2,7 @@ var topics = ["breakdance", "samba", "salsa", "tap dance", "ballet", "modern dan
 var pics;
 var currentTopic;
 
-function pageButtons(){
+function placeButtons(){
 
 	$("#buttonBox").empty();
 	for (var i = 0; i < topics.length; i++) {
@@ -13,7 +13,7 @@ function pageButtons(){
 
 function getPictures(topic, callback){
 	// Example queryURL for Giphy API
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="+topic+"&api_key=5a6b2fcef7a946b89cf7a4f11c1eb68d&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+topic+"&api_key=5a6b2fcef7a946b89cf7a4f11c1eb68d&limit=10";
 
     $.ajax({
       url: queryURL,
@@ -53,11 +53,10 @@ function fixSpaces(){
 	return newStr;
 }
 
-window.onload = function() {
-	pageButtons();
-}
-
 $( document ).ready(function() {
+
+	placeButtons();
+
 	$(document).on("click", ".btnList", function(){
 		
 		currentTopic = $(this).attr("data-topic");
@@ -75,10 +74,14 @@ $( document ).ready(function() {
 	});
 
 	 $('.addBox').keydown(function(event) {
+        
+        
+
         if (event.keyCode == 13) {
-            
+            event.preventDefault();
             topics.push($(this).val());
-            pageButtons();
+            placeButtons();
+            console.log(topics);
 
          }
     });
