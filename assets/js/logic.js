@@ -1,4 +1,4 @@
-var topics = ["breakdance", "samba", "salsa", "tap dance", "ballet", "modern dance", "foxtrot", "ballroom dance"];
+var topics = ["Breakdance", "Graffiti", "MC", "RAP", "Turntable", "Grandmaster Flash", "Bboy", "Dance Battle", "Funk"];
 var pics;
 var currentTopic;
 
@@ -34,9 +34,12 @@ function placePictures(){
 		
 		var src = pics.data[i].images.fixed_height_still.url;
 		
-		$("#pictureBox").append("<img src='"+
+		$("#pictureBox").append("<div class='thumbnail'>"+
+								"<img src='"+
 								src +
-								"' class='img-fluid thumbnail picList' data-num='"+i+"'>");
+								"' class='img-fluid picList' data-num='"+i+"'>"+
+								"<p class='caption'>Rating: " + pics.data[i].rating + "</p>"+
+								"</div>");
 	}
 }
 
