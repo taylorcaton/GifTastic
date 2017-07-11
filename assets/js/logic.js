@@ -37,7 +37,7 @@ function placePictures(){
 		$("#pictureBox").append("<div class='thumbnail'>"+
 								"<img src='"+
 								src +
-								"' class='img-fluid picList' data-num='"+i+"'>"+
+								"' class='img-fluid picList' data-num='"+i+"' data-animate='still' >"+
 								"<p class='caption'>Rating: " + pics.data[i].rating + "</p>"+
 								"</div>");
 	}
@@ -72,7 +72,16 @@ $( document ).ready(function() {
 
 	$(document).on("click", ".picList", function(){
 		var arrayNum = $(this).attr("data-num");
-		var newSrc = pics.data[arrayNum].images.fixed_height.url;
+		var animate = $(this).attr("data-animate");
+
+		if(animate === "still"){
+			var newSrc = pics.data[arrayNum].images.fixed_height.url;
+			$(this).attr("data-animate", "animate");
+		}else{
+			var newSrc = pics.data[arrayNum].images.fixed_height_still.url;
+			$(this).attr("data-animate", "still");
+		}
+		
 		$(this).attr("src", newSrc);
 	});
 
