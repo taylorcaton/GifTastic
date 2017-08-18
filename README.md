@@ -4,6 +4,8 @@ A simple bootstrap webpage that uses jQuery (for AJAX calls), HTML, and CSS to s
 
 Link: taylorcaton.github.io/GifTastic
 
+![Preview Image](/assets/images/Capture1.jpg)
+
 Credits: 
 * [giphy API](https://developers.giphy.com/) 
 * [Bootstrap](http://getbootstrap.com/) 
